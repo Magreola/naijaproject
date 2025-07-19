@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Cake</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <h1>Let's cake you up!</h1>
+        <a href="http://127.0.0.1:5000">HOME</a>
+    </header>
+    
+    <nav>
+        <p>Please place your order</p>
+    
+    </nav>
+    
+    <form action="/submit" method="POST">
+        <fieldset>
+            <legend>Customer Details</legend>
+    
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" required><br><br>
+    
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" required><br><br>
+    
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br><br>
+    
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br><br>
+    
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br><br>
+    
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode" required><br><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Cake Order</legend>
+    
+            <label for="cake_size">Cake Size:</label>
+            <select name="cake_size" id="cake_size" required>
+                <option value="4-inch round">4 inch</option>
+                <option value="12-inch round">12 inch</option>
+                <option value="14-inch round">14 inch</option>
+                <option value="16-inch round">16 inch</option>
+            </select><br><br>
+    
+            <label for="cake_type">Cake Type:</label>
+            <select name="cake_type" id="cake_type" required>
+                <option value="birthday">Birthday</option>
+                <option value="wedding">Wedding</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="holidays">Holidays</option>
+            </select><br><br>
+    
+            <label for="flavor">Flavor:</label>
+            <select name="flavor" id="flavor" required>
+                <option value="vanilla">Vanilla</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="banana">Banana</option>
+                <option value="cherry">Cherry</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="redvelvet">Red Velvet</option>
+            </select><br><br>
+    
+            <label for="design">Design:</label>
+            <select name="design" id="design" required>
+                <option value="sweet_and_classic">Sweet and Classic</option>
+                <option value="ruffles">Ruffles</option>
+                <option value="Animal Print">Animal Print</option>
+                <option value="Light and Airy">Light Airy</option>
+                <option value="Classy">Classy</option>
+                <option value="custom">Custom</option>
+            </select><br><br>
+        </fieldset>
+    
+        <button type="submit">Submit Order</button>
+    </form>
+    
+    
+    <footer>
+        <p>Thank you for ordering with Naija Cakes!</p>
+        </form>
+    </footer>
+
+</div>
+</body>
+</html>

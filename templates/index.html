@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naija Cakes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h2>Welcome to <a href="#">Naija Cakes</a></h2>
+
+           <h3> <form action="{{ url_for('view_order') }}" method="get">
+        <label for="order_id">View Order (Enter Order ID):</label>
+        <input type="text" id="order_id" name="order_id">
+        <button type="submit">Submit</button>
+    </form>
+    </h3>
+        </header>
+
+        <nav>
+            <a href="http://127.0.0.1:5000/order">HOME</a>
+            <a href="http://127.0.0.1:5000/list">MENU</a>
+            <a href="http://127.0.0.1:5000/order">ORDER ONLINE</a>
+            <a href="#">ABOUT</a>
+            <a href="http://127.0.0.1:5000/Contact">CONTACT</a>
+        </nav>
+
+        <main>
+            <h1>Let's cake you up!</h1>
+            <p>
+                Every bite tells a story of love and tradition.<br>
+                Celebrating a birthday? A wedding? Or just craving something special?<br>
+                We have the perfect treat for you. 🎂 Freshly baked. Lovingly made. Unforgettable taste.<br>
+                Place your order today and let us sweeten your moments!
+            </p>
+
+             
+
+            
+            <a href="http://127.0.0.1:5000/order" class="order-button">ORDER CAKE</a>
+        </main>
+
+        <footer>
+            <a href="https://www.bing.com/maps?qs=AS&pq=1971+Univer&sk=CSYN1&sc=16-11&pglt=43&q=1971+university+blvd+lynchburg+va+24515&cvid=d972e36014e44d83bdc11965aad856bb&gs_lcrp=EgRlZGdlKgcIABAAGPkHMgcIABAAGPkHMgYIARBFGDkyBggCEAAYQDIGCAMQABhAMgYIBBAAGEAyBggFEAAYQDIGCAYQABhAMgYIBxAAGEAyBggIEAAYQNIBCTIzMzMwajBqMagCALACAA&FORM=ANNTA1&PC=U531" target="_blank">
+                1971 University Boulevard, Lynchburg, VA 24515
+            </a>
+        </footer>
+
+    </div>
+
+</body>
+</html>

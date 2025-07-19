@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='updateorder.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header><h2>Update Your Cake Order</h2></header>
+ 
+        <p>Order ID: {{ order.id }}</p>
+        <form class="orderid" action="{{ url_for('update_order') }}" method="POST">
+            <input type="hidden" name="order_id" value="{{ order.id }}">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname" value="{{ order.fname }}" required><br><br>
+
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" value="{{ order.lname }}" required><br><br>
+
+            <label for="cake_size">Cake Size:</label>
+            <select id="cake_size" name="cake_size" required>
+                <option value="4-inch round" {% if order.cake_size == '4-inch round' %}selected{% endif %}>4 inch</option>
+                <option value="12-inch round" {% if order.cake_size == '12-inch round' %}selected{% endif %}>12 inch</option>
+                <option value="14-inch round" {% if order.cake_size == '14-inch round' %}selected{% endif %}>14 inch</option>
+            </select><br><br>
+
+            <label for="flavor">Flavor:</label>
+            <select id="flavor" name="flavor" required>
+                <option value="vanilla" {% if order.flavor == 'vanilla' %}selected{% endif %}>Vanilla</option>
+                <option value="chocolate" {% if order.flavor == 'chocolate' %}selected{% endif %}>Chocolate</option>
+                <option value="coconut_milk" {% if order.flavor == 'coconut_milk' %}selected{% endif %}>Coconut Milk</option>
+                <option value="banana" {% if order.flavor == 'banana' %}selected{% endif %}>Banana</option>
+                <option value="strawberry" {% if order.flavor == 'strawberry' %}selected{% endif %}>Strawberry</option>
+            </select><br><br>
+
+            <button type="submit">Update Order</button>
+        </form>
+    </div>
+     <nav>
+        <a href="http://127.0.0.1:5000">HOME</a>
+     </nav>
+    <main></main>
+</body>
+</html>

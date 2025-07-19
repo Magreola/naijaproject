@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vieworder.css') }}">
+</head>
+
+
+<div class="container">
+<body>
+
+
+    <header>
+        <a href="http://127.0.0.1:5000">HOME</a>
+    </header>
+
+
+
+    <nav class="ordersummary">
+        <p class="top">order summary</p>
+            <p><strong>First Name:</strong> {{ order.fname }}</p>
+            <p><strong>Last Name:</strong> {{ order.lname }}</p>
+            <p><strong>Address:</strong> {{ order.address }}</p>
+            <p><strong>City:</strong> {{ order.city }}</p>
+            <p><strong>State:</strong> {{ order.state }}</p>
+            <p><strong>Zip Code:</strong> {{ order.zipcode }}</p>
+            <p><strong>Cake Size:</strong> {{ order.cake_size }}</p>
+            <p><strong>Cake Type:</strong> {{ order.cake_type }}</p>
+            <p><strong>Flavor:</strong> {{ order.flavor }}</p>
+            <p><strong>Design:</strong> {{ order.design }}</p>
+            <p><strong>Order ID:</strong>{{order.orderid}}</p>
+    </nav>
+
+
+    <main>
+        <p><a href="{{ url_for('update_order') }}?order_id={{ order.id }}" style="float: right;">Update This Order</a>
+    </main>
+
+
+    <Footer></Footer>
+    
+</body>
+</div>
+</html>

@@ -1,0 +1,95 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: lemonchiffon;
+    background-image: url(images/cakebackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+header {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    padding-left: 30px;
+    padding-right: 100px;
+   }
+
+nav{
+    background-color: rgba(0, 0, 0, 0.336);
+    text-align: center;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 14px;
+    padding-bottom: 14px;
+}
+
+h2{
+    color: white;
+}
+
+main{
+    height: 400px;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.418);
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: Arial;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+h1{
+    color: white;
+    font-style: italic;
+    font-size: 50px;
+}
+
+p{
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: bolder;
+}
+
+a{
+    color: white
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}   
+
+main a {
+    color: black;
+    font-weight: bold;
+}
+
+h3{
+    color: white;
+    font-size: 12px;
+    text-align: right;
+}

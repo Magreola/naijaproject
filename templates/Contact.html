@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Contact.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+    <header><a href="http://127.0.0.1:5000/order">HOME</a></header>
+
+
+    <nav>
+        <h2>Contact Us</h2>
+    <p>We'd love to hear from you! Reach out with any questions, custom cake requests, or feedback.</p>
+
+    <form action="/send_message" method="post">
+        <label for="name">Name*</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email*</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Your Message*</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p>You can also reach us at:</p>
+    <p><strong>Email:</strong> project@naijacakes.com</p>
+    <p><strong>Phone:</strong> +1 (222) 123-4567</p>
+    <p><strong>Address:</strong> 1971 University Boulevard, Lynchburg, VA 24515</p>
+    </nav>
+
+
+    <main></main>
+
+
+    <footer></footer>
+    </div>
+    
+</body>
+</html>

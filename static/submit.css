@@ -1,0 +1,40 @@
+body{
+    background-color: blanchedalmond;
+    background-image: url(images/);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+header{
+    height: 100px;
+    
+}
+
+nav{
+    height: 208px;
+    
+}
+
+main{
+    height: 300px;
+    
+}
+
+footer{
+    height: 180px;
+}
+p{
+    font-weight: bolder;
+    font-size: 25px;
+    font-style: italic;
+    text-align: left;
+}
+
+

@@ -1,0 +1,89 @@
+body{
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+.container a{
+    color: black;
+    font-weight: bolder;
+}
+
+header{
+    height: 100px;
+    width: 1024px; 
+    text-align: center; 
+
+}
+
+nav{
+    height: 208px;
+    width: 1024px;  
+}
+
+nav p{
+    font-size: 20px;
+    color: brown;
+    
+}
+main{
+    height: 300px;
+    width: 1024px;   
+}
+
+footer{
+    height: 180px;
+    width: 1024px;
+}
+
+h1{
+    font-size: 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+nav h2{
+    padding-bottom: 100px;
+}
+
+.chocolate{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+.vanilla{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.banana{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.cherry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strawberry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redvelvet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
