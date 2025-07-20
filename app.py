@@ -4,9 +4,9 @@ import uuid
 import os
 
 app = Flask(__name__)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///orders.db'
 db = SQLAlchemy(app)
-
 
 class Order(db.Model):
     id = db.Column(db.String(8), primary_key=True)
@@ -30,7 +30,6 @@ def index():
 def list():
     return render_template('list.html')
 
-
 @app.route('/order')
 def order():
     return render_template('order.html')
@@ -38,7 +37,6 @@ def order():
 @app.route('/Contact')
 def Contact():
     return render_template('Contact.html')
-
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -59,7 +57,6 @@ def submit():
     db.session.commit()
     return render_template('submit.html', order=new_order)
 
-
 @app.route('/vieworder')
 def view_order():
     order_id = request.args.get('order_id')
@@ -69,7 +66,6 @@ def view_order():
     if not order:
         return "Order not found", 404
     return render_template('vieworder.html', order=order)
-
 
 @app.route('/update_order', methods=['GET', 'POST'])
 def update_order():
@@ -87,9 +83,7 @@ def update_order():
         order = Order.query.get(order_id)
         if not order:
             return "Order not found", 404
-
-
-    
+        
         order.fname = request.form.get('fname')
         order.lname = request.form.get('lname')
         order.cake_size = request.form.get('cake_size')
@@ -98,13 +92,8 @@ def update_order():
         db.session.commit()
 
         return redirect(url_for('view_order', order_id=order.id))
-    
-
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  
-        print("\nAvailable Routes:")
-for rule in app.url_map.iter_rules():
-    print(rule)
-    app.run(debug=True)
+        
