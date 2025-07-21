@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submit</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='submit.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='submit.css') }}" />
 </head>
 
 <body>
 
     <div class="container">
         <header>
-            <a href="http://127.0.0.1:5000">HOME</a>
+            <a href="{{ url_for('index') }}">HOME</a>
         </header>
 
         <nav>
             <p>Order Complete!!!</p>
-
             <p>Your cake order has been submitted successfully.</p>
-
             <p>Thank you for your order!</p>
             <p><strong>Your Order ID:</strong> {{ order.id }}</p>
         </nav>
 
         <main>
-          <p><a href="{{ url_for('update_order') }}?order_id={{ order.id }}" style="float: right;">Update This Order</a></p>
-            
+            <p><a href="{{ url_for('update_order') }}?order_id={{ order.id }}" style="float: right;">Update This Order</a></p>
         </main>
 
         <footer>
-             <p>We will contact you soon.</p>
+            <p>We will contact you soon.</p>
             <p>Thank you for choosing Naija Cakes!</p>
         </footer>
     </div>

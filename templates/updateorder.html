@@ -8,10 +8,11 @@
 <body>
     <div class="container">
         <header><h2>Update Your Cake Order</h2></header>
- 
+
         <p>Order ID: {{ order.id }}</p>
         <form class="orderid" action="{{ url_for('update_order') }}" method="POST">
             <input type="hidden" name="order_id" value="{{ order.id }}">
+            
             <label for="fname">First name:</label>
             <input type="text" id="fname" name="fname" value="{{ order.fname }}" required><br><br>
 
@@ -37,9 +38,9 @@
             <button type="submit">Update Order</button>
         </form>
     </div>
-     <nav>
-        <a href="http://127.0.0.1:5000">HOME</a>
-     </nav>
+    <nav>
+        <a href="{{ url_for('index') }}">HOME</a>
+    </nav>
     <main></main>
 </body>
 </html>

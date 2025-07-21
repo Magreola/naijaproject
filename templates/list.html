@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>list</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='list.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='list.css') }}" />
 </head>
 <body>
 
 <div class="container">
-<header><h1>Naija Cake</h1>
+    <header>
+        <h1>Naija Cake</h1>
         <h2>MAIN MENU</h2>
-        <a href="http://127.0.0.1:5000/order">HOME</a>
-</header>
+        <a href="{{ url_for('order') }}">HOME</a>
+    </header>
 
+    <nav>
+        <p>Please view your cake</p>
+        <p>Explore our delicious selection of handcrafted cakes below.</p>
+        <p>Each cake is freshly baked and made with love just for you.</p>
+        <p>Made with fresh organic recipes.</p>
+    </nav>
 
-<nav><p>Please view your cake</p>
-     <p>Explore our delicious selection of handcrafted cakes below.</p>
-     <p>Each cake is freshly baked and made with love just for you.</p>
-     <p>Made with fresh organic receipes.</p>
-</nav>
+    <main>
 
+        <div class="chocolate">
+            <img src="{{ url_for('static', filename='images/chocklatecake.jpg') }}" width="100" alt="chocolate cake" />
+            <h3>Chocolate Cake</h3>
+            <p>Rich and moist chocolate layers with a creamy ganache finish.</p>
+            <p><strong>$25</strong></p>
+        </div>
 
+        <div class="vanilla">
+            <img src="{{ url_for('static', filename='images/VanillaCake.webp') }}" width="100" height="100" alt="Vanilla Cake" />
+            <h3>Vanilla Delight</h3>
+            <p>Classic vanilla sponge layered with whipped cream frosting.</p>
+            <p><strong>$20</strong></p>
+            <a href="{{ url_for('order') }}">Vanilla Delight</a>
+        </div>
 
-<main>
+        <div class="redvelvet">
+            <img src="{{ url_for('static', filename='images/redvelvet-cakes.jpg') }}" width="100" height="100" alt="Red Velvet Cake" />
+            <h3>Red Velvet</h3>
+            <p>Deep red sponge with cream cheese frosting – elegant and tasty.</p>
+            <p><strong>$28</strong></p>
+        </div>
 
-    <div class="chocolate">
-        <img src="{{url_for('static', filename='images/chocklatecake.jpg')}}" width="100" alt="chocklatecake.jpg">
-        <h3>Chocolate Cake</h3>
-        <p>Rich and moist chocolate layers with a creamy ganache finish.</p>
-        <p><strong>$25</strong></p>
-    </div>
+        <div class="banana">
+            <img src="{{ url_for('static', filename='images/Banana.webp') }}" width="100" height="100" alt="Banana Cake" />
+            <h3>Banana</h3>
+            <p>Banana Cake Recipe No Milk.</p>
+            <p><strong>$20</strong></p>
+        </div>
 
-    <div class="vanilla">
-        <img src="{{ url_for('static', filename='images/VanillaCake.webp')}}" width="100" height="100" alt="Vanilla Cake">
-        <h3>Vanilla Delight</h3>
-        <p>Classic vanilla sponge layered with whipped cream frosting.</p>
-        <p><strong>$20</strong></p>
-        <a href="http://127.0.0.1:5000/order">Vanilla Delight</a>
-    </div>
+        <div class="cherry">
+            <img src="{{ url_for('static', filename='images/cherrycake.jpg') }}" width="100" height="100" alt="Cherry Cake" />
+            <h3>Cherry</h3>
+            <p>Cherry On Cake Stock.</p>
+            <p><strong>$20</strong></p>
+        </div>
 
-    <div class="redvelvet">
-        <img src="{{ url_for('static', filename='images/redvelvet-cakes.jpg') }}" width="100" height="100" alt="redvelvetcake">
-        <h3>Red Velvet</h3>
-        <p>Deep red sponge with cream cheese frosting – elegant and tasty.</p>
-        <p><strong>$28</strong></p>
-    </div>
+        <div class="strawberry">
+            <img src="{{ url_for('static', filename='images/strawberrycake.webp') }}" width="100" height="100" alt="Strawberry Cake" />
+            <h3>Strawberry</h3>
+            <p>Strawberry Sweet Royalty.</p>
+            <p><strong>$20</strong></p>
+        </div>
 
-    <div class="banana">
-        <img src="{{ url_for('static', filename='images/Banana.webp')}}" width="100" height="100" alt="Banana">
-        <h3>Banana</h3>
-        <p>Banana Cake Recipe No Milk.</p>
-        <p><strong>$20</strong></p>
-    </div>
+    </main>
 
-    <div class="cherry">
-        <img src="{{ url_for('static', filename='images/cherrycake.jpg')}}" width="100" height="100" alt="cherrycake">
-        <h3>Cherry</h3>
-        <p>Cherry On Cake Stock.</p>
-        <p><strong>$20</strong></p>
-    </div>
-
-    <div class="strawberry">
-        <img src="{{ url_for('static', filename='images/strawberrycake.webp')}}" width="100" height="100" alt="strawberrycake">
-        <h3>Strawberry</h3>
-        <p>Strawberry Sweet Royalty.</p>
-        <p><strong>$20</strong></p>
-    </div>
- 
-</main>
-
-
-<footer></footer>
+    <footer></footer>
 
 </div>
 </body>
