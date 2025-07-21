@@ -91,9 +91,13 @@ def update_order():
         order.flavor = request.form.get('flavor')
         db.session.commit()
 
-        return redirect(url_for('view_order', order_id=order.id))
+    return redirect(url_for('view_order', order_id=order.id))
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()  
-        
+        print("\nAvailable Routes:")
+        for rule in app.url_map.iter_rules():
+            print(rule)
+    app.run()
+
