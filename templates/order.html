@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Cake Order</title>
+    <title>Order Your Cake</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='order.css') }}">
 </head>
+
 <body>
-    <h1>Order Your Cake</h1>
+<div class="container">
+    <header><h1>Order Your Cake</h1></header>
+
     <form action="{{ url_for('submit') }}" method="POST">
         <label>First Name:</label>
         <input type="text" name="fname" required><br>
@@ -51,5 +54,12 @@
 
         <button type="submit">Submit Order</button>
     </form>
+
+    <footer>
+        <h3>Quick Links</h3>
+        <a href="{{ url_for('view_order_page') }}">View Order</a><br>
+        <a href="{{ url_for('update_order_page') }}">Update Order</a>
+    </footer>
+</div>
 </body>
 </html>
