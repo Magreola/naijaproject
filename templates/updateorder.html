@@ -21,18 +21,19 @@
 
             <label for="cake_size">Cake Size:</label>
             <select id="cake_size" name="cake_size" required>
-                <option value="4-inch round" {% if order.cake_size == '4-inch round' %}selected{% endif %}>4 inch</option>
-                <option value="12-inch round" {% if order.cake_size == '12-inch round' %}selected{% endif %}>12 inch</option>
-                <option value="14-inch round" {% if order.cake_size == '14-inch round' %}selected{% endif %}>14 inch</option>
+                <option value="Small" {% if order.cake_size == 'Small' %}selected{% endif %}>Small</option>
+                <option value="Medium" {% if order.cake_size == 'Medium' %}selected{% endif %}>Medium</option>
+                <option value="Large" {% if order.cake_size == 'Large' %}selected{% endif %}>Large</option>
             </select><br><br>
 
             <label for="flavor">Flavor:</label>
             <select id="flavor" name="flavor" required>
                 <option value="vanilla" {% if order.flavor == 'vanilla' %}selected{% endif %}>Vanilla</option>
                 <option value="chocolate" {% if order.flavor == 'chocolate' %}selected{% endif %}>Chocolate</option>
-                <option value="coconut_milk" {% if order.flavor == 'coconut_milk' %}selected{% endif %}>Coconut Milk</option>
+                <option value="Red Velvet" {% if order.flavor == 'red Velvet' %}selected{% endif %}>Red Velvet</option>
                 <option value="banana" {% if order.flavor == 'banana' %}selected{% endif %}>Banana</option>
                 <option value="strawberry" {% if order.flavor == 'strawberry' %}selected{% endif %}>Strawberry</option>
+                <option value="cherry" {% if order.flavor == 'cherry' %}selected{% endif %}>Cherry</option>
             </select><br><br>
 
             <button type="submit">Update Order</button>
