@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 import uuid
 import os
 
@@ -21,6 +22,9 @@ class Order(db.Model):
     flavor = db.Column(db.String(50))
     design = db.Column(db.String(100))
 
+    pickup_date = db.Column(db.Date)
+    delivery_date = db.Column(db.Date)
+
 
 @app.route('/')
 def index():
@@ -33,6 +37,8 @@ def list():
 @app.route('/order')
 def order():
     return render_template('order.html')
+    pickup_date = db.Column(db.Date)
+    delivery_date = db.Column(db.Date)
 
 @app.route('/Contact')
 def contact():
@@ -40,6 +46,9 @@ def contact():
 
 @app.route('/submit', methods=['POST'])
 def submit():
+    pickup = request.form.get('pickup_date')
+    delivery = request.form.get('delivery_date')
+
     new_order = Order(
         id=str(uuid.uuid4())[:8].upper(),
         fname=request.form.get('fname'),
@@ -51,11 +60,15 @@ def submit():
         cake_size=request.form.get('cake_size'),
         cake_type=request.form.get('cake_type'),
         flavor=request.form.get('flavor'),
-        design=request.form.get('design')
+        design=request.form.get('design'),  
+        pickup_date=datetime.strptime(pickup, '%Y-%m-%d').date() if pickup else None,
+        delivery_date=datetime.strptime(delivery, '%Y-%m-%d').date() if delivery else None
+    
     )
     db.session.add(new_order)
     db.session.commit()
     return redirect(url_for('view_order', order_id=new_order.id))
+
 
 @app.route('/vieworder')
 def view_order():
@@ -89,6 +102,12 @@ def update_order():
         order.cake_size = request.form.get('cake_size')
         order.cake_type = request.form.get('cake_type')
         order.flavor = request.form.get('flavor')
+        pickup = request.form.get('pickup_date')
+        delivery = request.form.get('delivery_date')
+        print("Form pickup_date:", pickup)
+        print("Form delivery_date:", delivery)
+        order.pickup_date = datetime.strptime(pickup, '%Y-%m-%d').date() if pickup else None
+        order.delivery_date = datetime.strptime(delivery, '%Y-%m-%d').date() if delivery else None
         db.session.commit()
 
         return redirect(url_for('view_order', order_id=order.id))
