@@ -25,6 +25,10 @@ class Order(db.Model):
     pickup_date = db.Column(db.Date)
     delivery_date = db.Column(db.Date)
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 
 @app.route('/')
 def index():
